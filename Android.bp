@@ -1,0 +1,35 @@
+//
+// Automatically generated file. DO NOT MODIFY
+//
+
+soong_namespace {
+    imports: [
+        "hardware/qcom-caf/sm8450-6.6",
+    ],
+}
+
+cc_prebuilt_library_shared {
+    name: "libar-pal",
+    owner: "sony",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libar-pal.so",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    soc_specific: true,
+}
+
+install_symlink {
+    name: "vendor_firmware_qca6755_bdwlan_elf",
+    soc_specific: true,
+    installed_location: "firmware/qca6755/bdwlan.elf",
+    symlink_target: "/vendor/etc/wifi/bdwlan.elf",
+}
